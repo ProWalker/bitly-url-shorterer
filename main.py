@@ -4,8 +4,6 @@ import os
 import requests
 import argparse
 
-load_dotenv()
-
 def shorten_link(token, url):
     api_url = 'https://api-ssl.bitly.com/v4/shorten'
     headers = {
@@ -47,6 +45,7 @@ def is_bitlink(token, url):
 
 
 if __name__ == '__main__':
+    load_dotenv()
     parser = argparse.ArgumentParser()
     parser.add_argument('link', help='link or BitLink')
     args = parser.parse_args()
